@@ -1,6 +1,6 @@
 'use strict';
 
-exports.static = {
+exports.staticPlus = {
   maxAge: 31536000,
   buffer: true,
 };

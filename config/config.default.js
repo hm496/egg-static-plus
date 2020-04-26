@@ -9,12 +9,16 @@ module.exports = appInfo => {
    * Static file serve
    *
    * @member Config#static
+   * @property {Function} staticFileFilter - path filter function, `null` by default
+   * @property {Function} pathRewrite - pathRewrite function, `null` by default
    * @property {String} prefix - `/public/` by default
    * @property {String} dir - static files store dir, `${baseDir}/app/public` by default
    * @property {Number} maxAge - cache max age, default is 0
    * @see https://github.com/koajs/static-cache
    */
-  exports.static = {
+  exports.staticPlus = {
+    staticFileFilter: null,
+    pathRewrite: null,
     prefix: '/public/',
     dir: path.join(appInfo.baseDir, 'app/public'),
     // dirs: [ dir1, dir2 ] or [ dir1, { prefix: '/static2', dir: dir2 } ],
@@ -22,7 +26,7 @@ module.exports = appInfo => {
     dynamic: true,
     preload: false,
     buffer: false,
-    maxFiles: 1000,
+    maxFiles: 1000
   };
   return exports;
 };

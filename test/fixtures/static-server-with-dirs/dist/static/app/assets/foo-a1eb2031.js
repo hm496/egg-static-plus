@@ -1,1 +1,0 @@
-define("static/app/assets/foo-a1eb2031",[],function(a,e,t){alert("bar")});
